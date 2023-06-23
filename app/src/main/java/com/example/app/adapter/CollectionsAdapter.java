@@ -1,0 +1,95 @@
+package com.example.app.adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.app.R;
+import com.example.app.bean.Sports;
+
+import java.util.List;
+
+public class CollectionsAdapter extends RecyclerView.Adapter<CollectionsAdapter.MyHolder>{
+    private View view;
+    private Context context;
+    private List<Sports> sportsList;
+    private OnItemClickListener myOnItemClickListener;
+
+    public interface OnItemClickListener {
+        void onCollectedButton(View view, int position, String id);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener clickListener) {
+        this.myOnItemClickListener = clickListener;
+    }
+
+    public CollectionsAdapter(Context context, List<Sports> sportsList) {
+        this.context = context;
+        this.sportsList = sportsList;
+    }
+
+    @NonNull
+    @Override
+    public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        view = LayoutInflater.from(context).inflate(R.layout.item_list_collections, parent, false);
+        MyHolder myHolder= new MyHolder(view,myOnItemClickListener);
+        return myHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyHolder holder, int position) {
+        holder.sportsName.setText(sportsList.get(position).getSportsName());
+        holder.sportsGym.setText(sportsList.get(position).getSportsGym());
+        holder.sportsDate.setText(sportsList.get(position).getSportsDate());
+        String path = sportsList.get(position).getPath();
+        int drawableId = context.getResources().getIdentifier(path, "drawable", context.getPackageName());
+        holder.sportsIcon.setImageDrawable(context.getDrawable(drawableId));
+    }
+
+    @Override
+    public int getItemCount() {
+        return sportsList.size();
+    }
+
+    public int getItemViewType(int position) {
+        // 给每个ItemView指定不同的类型，这样在RecyclerView看来，这些ItemView全是不同的，不能复用
+        return position;
+    }
+
+    public class MyHolder extends RecyclerView.ViewHolder{
+        public TextView sportsName;
+        public TextView sportsGym;
+        public TextView sportsDate;
+        private ImageButton collectedBtn;
+        private ImageView sportsIcon;
+        public MyHolder(@NonNull View itemView, final OnItemClickListener onClickListener) {
+            super(itemView);
+            sportsName = (TextView) itemView.findViewById(R.id.SportsName);
+            sportsGym = (TextView) itemView.findViewById(R.id.SportsGym);
+            sportsDate = (TextView) itemView.findViewById(R.id.SportsDate);
+            collectedBtn = (ImageButton) itemView.findViewById(R.id.collectedButton);
+            sportsIcon = (ImageView) itemView.findViewById(R.id.sportsIcon);
+
+            collectedBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (onClickListener != null) {
+                        int position = getLayoutPosition();
+                        boolean flag = false;
+                        //确保position值有效
+                        if (position != RecyclerView.NO_POSITION) {
+                            onClickListener.onCollectedButton(view,position,sportsList.get(position).getId());
+                        }
+                    }
+                }
+            });
+        }
+    }
+}

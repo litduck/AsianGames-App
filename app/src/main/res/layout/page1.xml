@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/banner"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="亚洲夏季运动会简介"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF000000"
+                    android:textSize="20sp"
+                    android:padding="10dp"
+                    android:text="\t\t\t\t亚洲夏季运动会简称亚运会，是国际奥林匹克委员会承认正式的亚洲地区的运动会。是亚洲夏季规模最大的综合性运动会，由亚洲奥林匹克理事会的成员国主办，
+每四年举办一届，与夏季奥林匹克运动会相间举行。起初由亚洲运动会联合会主办，1982年后由亚洲奥林匹克理事会（Olympic Council of Asia）主办。\n
+\t\t\t\t自1951年开始，亚运会已成功举办18届，确定举办地22届." />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    app:srcCompat="@drawable/emblem" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/smoothButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button2"
+                    android:textColor="@color/background"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="发展历程" />
+
+                <Button
+                    android:id="@+id/smoothButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button2"
+                    android:textColor="@color/background"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="会徽" />
+
+                <Button
+                    android:id="@+id/smoothButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button2"
+                    android:textColor="@color/background"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="历届回顾" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="发展历程"
+                    android:textColor="@color/blue"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="\t\t\t\t亚洲运动会的前身是远东运动会，1911年由菲律宾体育协会发起，每两年举办一次，轮流在菲律宾马尼拉、中国上海和日本大阪举行。远东运动会先后共举行了10届，1937年因日本侵华战争爆发而中止。\n
+\t\t\t\t第二次世界大战结束后，亚洲许多国家先后摆脱了殖民的统治，获得了独立和解放，建立了新的社会制度。随着战争创伤的平复，人民生活日趋安定，体育运动也逐渐活跃起来。亚洲体育界人士产生了组建一个统一的亚洲体育领导机构，以推动亚洲体育运动发展的愿望。\n
+\t\t\t\t1948年伦敦奥运会举办期间，中国与菲律宾的体育界人士计划恢复远东运动会，并与亚洲各国体育界人士商讨。当时的印度体育界领导人古鲁桑迪认为远东运动会不足以体现亚洲体育运动的水平和亚洲人民的团结精神，主张创办一个亚洲所有国家参加的亚洲运动会。他遍访了来伦敦参加本届奥运会的亚洲国家体育界代表，并邀请了13个亚洲国家和地区的代表召开了关于成立亚洲体育运动组织的筹备会议。会议决定起草亚洲运动会的有关文件和章程，并确定于1949年2月在印度首都新德里举办第一届亚洲运动会。因印度国内原因，这届运动会延期至1951年举行。1949年2月，亚洲各国体育界代表在新德里召开会议，会上正式成立了“亚洲业余体育联合会”。该联合会后来更名为“亚洲运动会联合会”，1981年更名为“亚洲奥林匹克理事会”。\n
+\t\t\t\t1951年3月，第1届亚运会在印度首都新德里举行，当时只有489人参加。到1978年第8届亚运会时，参加人数已超过了4000人。"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="会徽"
+                    android:textColor="@color/blue"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="\t\t\t\t亚洲奥林匹克理事会的第一代会徽的中间是1轮放射16道光芒的红日，象征着亚洲是太阳升起的地方，代表着亚洲运动的蓬勃发展与迅速推广。红日上方是国际奥委会的标志——奥运五环，下面写有“Ever Onward”，底部是“Olympic Council of Asia”的字样。第二代的会徽设计于2006年12月02日多哈亚运会期间公布。新会徽的中央也是红日，红日上面盘环绕着一条龙，下面环绕着一只鹰，代表亚洲的团结，并强调了东方巨龙中国以及鹰所代表的阿拉伯国家在亚洲体育中所起的重要作用。会徽下方是五环以及“Olympic Council of Asia”的字样。首个使用该会徽的是2007年亚洲室内运动会。\n
+\t\t\t\t由于亚运会是由亚洲奥林匹克理事会主办，如奥运会会徽必须要有五环图案一样，亚运会会徽上必须要融入一放射16道光芒的红日。"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="历届回顾"
+                    android:textColor="@color/blue"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:id="@+id/smallImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/game_return_view" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
